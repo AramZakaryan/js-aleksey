@@ -1,34 +1,4 @@
-// axios.get("https://jsonplaceholder.typicode.com/posts/1")
-//     .then(response => loadWithURL(response.data.title))
-//
-// function loadWithURL(content) {
-//
-//     const blob = new Blob([content])
-//
-//     const url = URL.createObjectURL(blob)
-//
-//     console.log(url)
-//
-//     const a = document.createElement("a")
-//
-//     a.href = url
-//     a.download = ""
-//     a.display = "none"
-//     document.body.appendChild(a)
-//
-//     a.click()
-//    
-//     a.remove()
-//    
-//     URL.revokeObjectURL(url)
-//
-// }
-
-
-// for del
-
-
-console.time("1")
+console.time("B")
 
 let arr1 = [15, 3, 8, 4, -20, 7, -12, 17, 2, 19, 10, 1, 6, 13, -18, 9, 11, 16, 5, 14];
 for (let i = arr1.length - 1; i >= 0; i--) {
@@ -44,18 +14,18 @@ for (let i = arr1.length - 1; i >= 0; i--) {
 }
 // console.log(arr1);
 
-console.timeEnd("1")
+console.timeEnd("B")
 
-console.time("2")
+console.time("J")
+
+/////////// JS sort method
 
 let arr2 = [15, 3, 8, 4, -20, 7, -12, 17, 2, 19, 10, 1, 6, 13, -18, 9, 11, 16, 5, 14];
 arr2.sort()
 
-// console.log(arr2);
+console.timeEnd("J")
 
-console.timeEnd("2")
-
-console.time("3")
+console.time("S")
 
 ////////// Selection Sort Algorithm
 
@@ -76,18 +46,14 @@ for (let i = 0; i < len - 1; i++) {
     }
 }
 
-console.timeEnd("3")
+console.timeEnd("S")
 
-console.time("4")
+console.time("Q")
 
-//////////  quicksort algorithm
+//////////  Quicksort Algorithm
 
 let arr4 = [15, 3, 8, 4, -20, 7, -12, 17, 2, 19, 10, 1, 6, 13, -18, 9, 11, 16, 5, 14];
 
-function quicksort(arr4) {
-    if (arr4.length <= 1) {
-        return arr4;
-    }
 
     const pivot = arr4[Math.floor(arr4.length / 2)];
     const lesser = [];
@@ -101,8 +67,54 @@ function quicksort(arr4) {
         }
     }
 
-    return [...quicksort(lesser), pivot, ...quicksort(greater)];
+    
+console.timeEnd("Q")
+
+console.time("M")
+
+////////// Merge Sort
+
+let arr5 = [15, 3, 8, 4, -20, 7, -12, 17, 2, 19, 10, 1, 6, 13, -18, 9, 11, 16, 5, 14];
+
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const mid = Math.floor(arr.length / 2);
+    const left = arr.slice(0, mid);
+    const right = arr.slice(mid);
+
+    return merge(mergeSort(left), mergeSort(right));
 }
 
-console.timeEnd("4")
+function merge(left, right) {
+    const merged = [];
+    let i = 0, j = 0;
 
+    while (i < left.length && j < right.length) {
+        if (left[i] <= right[j]) {
+            merged.push(left[i]);
+            i++;
+        } else {
+            merged.push(right[j]);
+            j++;
+        }
+    }
+
+    while (i < left.length) {
+        merged.push(left[i]);
+        i++;
+    }
+
+    while (j < right.length) {
+        merged.push(right[j]);
+        j++;
+    }
+
+    return merged;
+}
+
+mergeSort(arr5)
+
+console.timeEnd("M")
