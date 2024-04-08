@@ -170,3 +170,39 @@
 //     console.log(event.target.value);
 // }
 
+
+////////// Additional Question: URL and URLSearchParams
+// https://www.youtube.com/watch?v=ouuABmyc4PU
+
+// console.log( window.location.search )
+
+// const params = new URLSearchParams(window.location.search)
+
+// console.log(params.toString())
+//
+// console.log(params.has("_ijt"))
+//
+// console.log(params.get("_ijt"))
+// 
+// params.set("_ijt", "coucou")
+
+// params.append("someName", "someValue")
+
+// console.log(params.toString())
+
+//
+// const HmwURL = "users?pageSize=3&pageNumber=2"
+//
+// const responseURL = "user" + "\u003F" + "pageSize=3" + "\u0026" + "pageNumber=2"
+//
+// console.log(responseURL)
+
+
+// const myURL = new URL("http://localhost:63342/js-aleksey/index.html?_ijt=9r6d19tiq37ca45147p6s34j04&_ij_reload=RELOAD_ON_CHANGE")
+//
+// myURL.search+="&someName=someValue"
+//
+// console.log(myURL.search)
+
+
+
