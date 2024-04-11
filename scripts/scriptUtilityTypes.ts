@@ -63,5 +63,60 @@
 // const result1 :ResultType = "test"
 // const result2 :ResultType = 1
 
+////////// Type Guards
 
+// function myIncrement(value: unknown) {
+//     if (typeof value !== "number") {
+//         return null
+//     }
+//     return value
+// }
+//
+//
+// console.log(myIncrement("gago"));
+//
+// console.log(myIncrement(3));
 
+// function test (arg: object) {
+//     if("someKey" in arg) {
+//         arg
+//     }
+// }
+
+// function isNumber (value:unknown) {
+//     return typeof value==="number"
+// }
+//
+// function test (value:unknown) {
+//     if (isNumber(value)) {
+//         value
+//     }
+// }
+
+// function test (value:unknown) {
+//     if (typeof value ==="number") {
+//         value
+//     }
+// }
+
+// function isNumber (value:unknown): value is number {
+//     return typeof value==="number"
+// }
+//
+// function test (value:unknown) {
+//     if (isNumber(value)) {
+//         value
+//     // ^? (loval var)
+//     }
+// }
+
+function isNumber(value: unknown): asserts value is number {
+    if (typeof value !== "number") {
+        throw new Error("value must be number!")
+    }
+}
+
+function test(value: unknown) {
+    isNumber(value)
+    value
+}
