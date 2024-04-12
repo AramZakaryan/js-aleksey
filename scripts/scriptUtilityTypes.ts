@@ -166,33 +166,13 @@
 
 // ///// Uppercase   Lowercase   Capitalize   Uncapitalize
 //
-//
 // type newType1 =  Uppercase<"gago">
-//
-//
 //
 // type newType2 =  Lowercase<"GAGO">
 //
-//
-//
 // type newType3 =  Capitalize<"gago">
 //
-//
-//
 // type newType4 =  Uncapitalize<"Gago">
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////////// Type Guards
@@ -254,3 +234,44 @@
 //     value
 // }
 
+// ////////// unknown, never, void, object, Record
+
+///// unknown
+//
+// function mySum1(value: any) {
+//     return value+1
+// }
+//
+// console.log(mySum1(5))
+// console.log(mySum1("gago"))
+//
+// function mySum2(value: unknown) {
+//     if (typeof value !== "number"){
+//         return null
+//     }
+//     return value+1
+// }
+//
+// console.log(mySum2(5))
+// console.log(mySum2("gago"))
+
+///// never
+
+// function someFunc (value: number) {
+//     if (typeof value === "string") {
+//         value
+//     }
+// }
+
+
+///// object type
+
+// const gago1:object={name:"Gago"}
+// const gago2:object=function (){return "gago"}
+
+// const gago1: {  }={name:"Gago"}
+// const gago2: {  }=function (){return "gago"}
+// const gago3: {  }=1
+// const gago4: {  }=false
+
+const gago1: Record<string, unknown>={name:"Gago", age: 56}
